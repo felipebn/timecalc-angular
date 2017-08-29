@@ -6,10 +6,11 @@
     <p class="subtitle">
       To be able to check the difference in time!
     </p>
-    <div id="calculator" class="columns">
-      <time-input class="column is-one-third" label="Start"></time-input>
-      <time-input class="column is-one-third" label="Break"></time-input>
-      <time-input class="column is-one-third" label="End"></time-input>
+    <div id="calculator" class="columns is-multiline">
+      <time-input class="column is-one-third" label="Start" value={{journey.start}} (valueChanged)="updateResult()" ngDefaultControl></time-input>
+      <time-input class="column is-one-third" label="Break" [(ngModel)]="journey.break" (valueChanged)="updateResult()" ngDefaultControl></time-input>
+      <time-input class="column is-one-third" label="End"   [(ngModel)]="journey.end" (valueChanged)="updateResult()" ngDefaultControl></time-input>
+      <div class="column is-size-1 has-text-centered is-half is-offset-one-quarter">{{result}}</div>
     </div>
   </div>
 </section>
